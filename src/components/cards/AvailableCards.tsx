@@ -1,4 +1,4 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { Icard } from '../../typs/card';
 import { Bounce, toast } from 'react-toastify';
 
@@ -10,8 +10,7 @@ interface AvailableCardsProps {
 
 //got useable data from Cards.tsx all data (Cards)
 const AvailableCards = ({ cards, selectedCards, setSelectedCards }: AvailableCardsProps) => {
-    console.log("pppp ", cards)
-
+    // console.log("pppp ", cards)
 
     return (
         <div className='grid grid-cols-3 gap-6 mt-10'>

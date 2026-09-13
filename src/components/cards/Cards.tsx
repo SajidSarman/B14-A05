@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import { use, useState } from 'react';
 import type { Icard } from '../../typs/card';
 import AvailableCards from './AvailableCards';
 import SelectedCards from './SelectedCards';

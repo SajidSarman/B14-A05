@@ -1,4 +1,4 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { Icard } from '../../typs/card';
 import { RxCross2 } from 'react-icons/rx';
 import { toast } from 'react-toastify';
@@ -11,11 +11,11 @@ interface SelectedCardsProps {
 
 const SelectedCards = ({ selectedCards, setSelectedCards }: SelectedCardsProps) => {
 
-    console.log(selectedCards, "from selectComponent")
+    // console.log(selectedCards, "from selectComponent")
 
     const handleRemoveCard = (card:Icard) => {
         const restCards = selectedCards.filter(selectedCard => selectedCard.name !== card.name)
-        console.log(restCards, "restCards");
+        // console.log(restCards, "restCards");
 
         setSelectedCards(restCards)
 
