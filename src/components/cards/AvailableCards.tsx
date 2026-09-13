@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Icard } from '../../typs/card';
 
 interface AvailableCardsProps {
@@ -8,12 +8,16 @@ interface AvailableCardsProps {
 //got useable data from Cards.tsx all data (Cards)
 const AvailableCards = ({ cards } : AvailableCardsProps) => {
     console.log("pppp ", cards)
+
+    
     return (
         <div className='grid grid-cols-3 gap-6 mt-10'>
             {
                 cards.map((card: Icard) => {
-                    return (
+                    const [isSelected, setIsSelected] = useState(false)
 
+                    return (
+                        
                         <div key={card.id} className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-between">
 
                             {/*Icon, Badge */}
@@ -42,8 +46,11 @@ const AvailableCards = ({ cards } : AvailableCardsProps) => {
 
                             {/*Button */}
                             <div className="flex justify-center">
-                                <button className="bg-[#0b0f19] text-white font-medium px-6 py-2 rounded-xl text-sm w-full transition hover:bg-gray-700">
-                                    Add to Stack
+                                <button onClick={()=>{setIsSelected(true)}} 
+                                className="bg-[#0b0f19] text-white font-medium px-6 py-2 rounded-xl text-sm w-full transition hover:bg-gray-700"
+                                    disabled = {isSelected ? true : false}
+                                    >
+                                    {isSelected===true ? "Selected" : "Add to Stack"}
                                 </button>
                             </div>
 
