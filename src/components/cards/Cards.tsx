@@ -19,8 +19,9 @@ const Cards = ({ cardsPromise }: CardsProps) => {
         <div className='container mx-auto'>
             <h1 className='text-[36px] font-extrabold'>Explore the <span className='bg-clip-text text-transparent bg-linear-to-r from-[#ec4899] to-[#8b5cf6]'>Technologies</span></h1>
             <p className='text-[#64748b]'>Pick one technology per category to build your ideal stack.</p>
-            <div className='grid grid-cols-4 gap-8'>
-                <div className='col-span-3'>
+            
+            <div className='grid grid-cols-1 xl:grid-cols-4 gap-8'>
+                <div className='col-span-1 xl:col-span-3'>
                     <AvailableCards cards={cards} selectedCards={selectedCards} setSelectedCards={setSelectedCards}></AvailableCards>
                 </div>
 

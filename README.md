@@ -6,12 +6,12 @@ Description : A simple DevStack application to manage your development technolog
 -----------------------------------
 Technology that is used in this project :
 
-React.js,
-Tailwind CSS,
-DaisyUI --> Button, tostify, badge, footer
-TypeScript,
-React-Toastify (NPM Package),
-JSON (for technology data),
+React.js, 
+Tailwind CSS, 
+[DaisyUI --> badges], 
+TypeScript, 
+React-Toastify (NPM Package), 
+JSON (for technology data), 
 Vite (build tool)
 
 -----------------------------------

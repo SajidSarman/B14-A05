@@ -4,7 +4,7 @@ import Logo from '../assets/logo-text.png';
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-white text-gray-500 py-12 px-8 border-t border-gray-100 font-sans max-w-7xl mt-10 mx-auto">
+            <footer className="bg-white text-gray-500 py-12 px-8 border-t border-gray-100 mt-10 mx-auto">
                
                 <div className="grid grid-cols-4 gap-8 mb-12">
 
