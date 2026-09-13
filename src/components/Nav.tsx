@@ -14,7 +14,7 @@ const Nav = () => {
         <img className='h-full w-auto mx-auto md:mx-0' src={Logo} alt="Logo-Name" />
 
         <ul className="hidden md:flex items-center gap-7">
-          <li>Home</li>
+          <li className='text-[#db2777]'>Home</li>
           <li>Technologies</li>
           <li>Projects</li>
           <li>About</li>

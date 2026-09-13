@@ -17,8 +17,8 @@ Vite (build tool)
 
 -----------------------------------
 features about this project :
-1. has a responsive design
-2. uses modern UI components
+1. uses modern UI components
+2. has a responsive design
 3. can add and remove items(technologies-cards) from the "Yours Stack" section
 -----------------------------------
 i) What is JSX, and why is it used in React?
