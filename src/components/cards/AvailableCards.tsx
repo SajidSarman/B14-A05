@@ -4,7 +4,7 @@ import { Bounce, toast } from 'react-toastify';
 
 interface AvailableCardsProps {
     cards: Icard[];
-    selectedCards: Icard[]; 
+    selectedCards: Icard[];
     setSelectedCards: Dispatch<SetStateAction<Icard[]>>;
 }
 
@@ -17,13 +17,25 @@ const AvailableCards = ({ cards, selectedCards, setSelectedCards }: AvailableCar
         <div className='grid grid-cols-3 gap-6 mt-10'>
             {
                 cards.map((card: Icard) => {
-                    const [isSelected, setIsSelected] = useState(false)
+                    // const [isSelected, setIsSelected] = useState(false)
+                    let isSelected = false;
+
+                    for (const selectedCard of selectedCards) {
+                        if (selectedCard.id === card.id) {
+                            isSelected = true;
+                        }
+                    }
 
 
 
                     const handleSelectCard = () => {
-                        setIsSelected(true)
-                        
+                        if (isSelected) {
+                            toast.warning(`${card.name} is already in your stack.`)
+                            return
+                        }
+
+                        // setIsSelected(true)
+
                         toast.success(`${card.name} is added to your stack.`, {
                             position: "top-center",
                             autoClose: 5000,
@@ -73,9 +85,10 @@ const AvailableCards = ({ cards, selectedCards, setSelectedCards }: AvailableCar
                             <div className="flex justify-center">
                                 <button onClick={() => handleSelectCard()}
                                     className="bg-[#0b0f19] text-white font-medium px-6 py-2 rounded-xl text-sm w-full transition hover:bg-gray-700"
-                                    disabled={isSelected}
+                                // disabled={isSelected}
                                 >
-                                    {isSelected === true ? "Selected" : "Add to Stack"}
+                                    {/* className="bg-[#0b0f19] text-white font-medium px-6 py-2 rounded-xl text-sm w-full transition hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" */}
+                                    {isSelected === true ? "✓ Added to Stack" : "Add to Stack"}
                                 </button>
                             </div>
 

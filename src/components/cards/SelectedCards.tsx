@@ -1,6 +1,7 @@
 import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { Icard } from '../../typs/card';
-import { RxCross1, RxCross2 } from 'react-icons/rx';
+import { RxCross2 } from 'react-icons/rx';
+import { toast } from 'react-toastify';
 
 interface SelectedCardsProps {
     // cards: Icard[];
@@ -17,6 +18,12 @@ const SelectedCards = ({ selectedCards, setSelectedCards }: SelectedCardsProps) 
         console.log(restCards, "restCards");
 
         setSelectedCards(restCards)
+
+        toast.error(`${card.name} removed from your stack.`);
+    }
+    const handleRemoveAllCard = () => {
+        setSelectedCards([])
+        toast.error("All technologies removed from your stack.");
     }
 
     if(selectedCards.length === 0){
@@ -68,7 +75,7 @@ const SelectedCards = ({ selectedCards, setSelectedCards }: SelectedCardsProps) 
 
             {/* Button */}
             <div className="flex justify-center mt-9">
-                <button className="border border-red-300 text-red-600 font-medium px-6 py-2 rounded-xl text-sm w-full">
+                <button onClick={handleRemoveAllCard} className="border border-red-300 text-red-600 font-medium px-6 py-2 rounded-xl text-sm w-full">
                     Remove All
                 </button>
             </div>
