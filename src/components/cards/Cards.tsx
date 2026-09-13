@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import type { Icard } from '../../typs/card';
 import AvailableCards from './AvailableCards';
 import SelectedCards from './SelectedCards';
@@ -13,7 +13,7 @@ const Cards = ({ cardsPromise }: CardsProps) => {
     const cards = use(cardsPromise)
     // console.log("Cards: ", cards)
 
-
+    const [selectedCards, setSelectedCards] = useState<Icard[]>([])
 
     return (
         <div className='container mx-auto'>
@@ -21,11 +21,12 @@ const Cards = ({ cardsPromise }: CardsProps) => {
             <p className='text-[#64748b]'>Pick one technology per category to build your ideal stack.</p>
             <div className='grid grid-cols-4 gap-8'>
                 <div className='col-span-3'>
-                    <AvailableCards cards={cards}></AvailableCards>
+                    <AvailableCards cards={cards} selectedCards={selectedCards} setSelectedCards={setSelectedCards}></AvailableCards>
                 </div>
 
                 <div className='col-span-1'>
-                    <SelectedCards></SelectedCards>
+                    <SelectedCards selectedCards={selectedCards} setSelectedCards={setSelectedCards}></SelectedCards>
+                    {/* <SelectedCards cards={cards} selectedCards={selectedCards} setSelectedCards={setSelectedCards}></SelectedCards> */}
                 </div>
 
             </div>

@@ -1,23 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { Icard } from '../../typs/card';
+import { Bounce, toast } from 'react-toastify';
 
 interface AvailableCardsProps {
     cards: Icard[];
+    selectedCards: Icard[]; 
+    setSelectedCards: Dispatch<SetStateAction<Icard[]>>;
 }
 
 //got useable data from Cards.tsx all data (Cards)
-const AvailableCards = ({ cards } : AvailableCardsProps) => {
+const AvailableCards = ({ cards, selectedCards, setSelectedCards }: AvailableCardsProps) => {
     console.log("pppp ", cards)
 
-    
+
     return (
         <div className='grid grid-cols-3 gap-6 mt-10'>
             {
                 cards.map((card: Icard) => {
                     const [isSelected, setIsSelected] = useState(false)
 
-                    return (
+
+
+                    const handleSelectCard = () => {
+                        setIsSelected(true)
                         
+                        toast.success(`${card.name} is added to your stack.`, {
+                            position: "top-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: false,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            transition: Bounce,
+                        });
+
+                        //selected cards logic
+                        setSelectedCards([...selectedCards, card])
+                    }
+
+
+                    return (
+
                         <div key={card.id} className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col justify-between">
 
                             {/*Icon, Badge */}
@@ -46,11 +71,11 @@ const AvailableCards = ({ cards } : AvailableCardsProps) => {
 
                             {/*Button */}
                             <div className="flex justify-center">
-                                <button onClick={()=>{setIsSelected(true)}} 
-                                className="bg-[#0b0f19] text-white font-medium px-6 py-2 rounded-xl text-sm w-full transition hover:bg-gray-700"
-                                    disabled = {isSelected ? true : false}
-                                    >
-                                    {isSelected===true ? "Selected" : "Add to Stack"}
+                                <button onClick={() => handleSelectCard()}
+                                    className="bg-[#0b0f19] text-white font-medium px-6 py-2 rounded-xl text-sm w-full transition hover:bg-gray-700"
+                                    disabled={isSelected}
+                                >
+                                    {isSelected === true ? "Selected" : "Add to Stack"}
                                 </button>
                             </div>
 
