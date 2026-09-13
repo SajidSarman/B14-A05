@@ -60,9 +60,10 @@ const AvailableCards = ({ cards, selectedCards, setSelectedCards }: AvailableCar
                             {/*Icon, Badge */}
                             <div className="flex justify-between items-center mb-4">
                                 <img src={card.icon} alt="icon" className="w-10 h-10 object-contain" />
-                                <span className="border border-blue-600 text-blue-600 text-xs px-2.5 py-1 rounded-full font-medium">
+                                {/* <span className="border border-blue-600 text-blue-600 text-xs px-2.5 py-1 rounded-full font-medium">
                                     {card.badge}
-                                </span>
+                                </span> */}
+                                <div className="badge badge-soft badge-primary">{card.badge}</div>
                             </div>
 
                             {/* dec*/}

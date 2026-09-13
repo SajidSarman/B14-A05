@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className="border-b-2 border-gray-200 bg-white sticky top-0 z-50">
       <div className='flex justify-between container mx-auto py-5'>
 
-        <button className="block md:hidden w-6 h-6 mr-4">
+        <button className="block md:hidden w-6 h-6 mr-4 ml-4">
           <img src={Hamburger} alt="menu" className="w-full h-full object-contain" />
         </button>
 
