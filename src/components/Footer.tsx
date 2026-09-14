@@ -4,11 +4,11 @@ import Logo from '../assets/logo-text.png';
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-white text-gray-500 py-12 px-8 border-t border-gray-100 mt-10 mx-auto">
-               
-                <div className="grid grid-cols-4 gap-8 mb-12">
+            <footer className="bg-white text-gray-500 py-12 px-8 border-t border-gray-100 mt-25 mx-auto">
 
-                    <div>
+                <div className="text-center md:text-left grid md:grid-cols-4 gap-8 mb-12">
+
+                    <div className='md:col-span-1 flex flex-col items-center md:items-start'>
                         <div className="h-8 mb-4">
                             <img className='h-full w-auto object-contain' src={Logo} alt="Logo-Name" />
                         </div>
@@ -23,29 +23,32 @@ const Footer = () => {
                             <a href="#">LinkedIn</a>
                         </div>
                     </div>
-                    <div>
-                        <h4 className="text-xs font-bold text-gray-900 mb-4">PRODUCT</h4>
-                        <div className="flex flex-col gap-3 text-sm text-gray-400">
-                            <a href="#">Home</a>
-                            <a href="#">Technologies</a>
-                            <a href="#">Projects</a>
-                        </div>
-                    </div>
 
-                    <div>
-                        <h4 className="text-xs font-bold text-gray-900 mb-4">COMPANY</h4>
-                        <div className="flex flex-col gap-3 text-sm text-gray-400">
-                            <a href="#">About</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Careers</a>
+                    <div className='hidden md:col-span-3 md:grid grid-cols-3'>
+                        <div>
+                            <h4 className="text-xs font-bold text-gray-900 mb-4">PRODUCT</h4>
+                            <div className="flex flex-col gap-3 text-sm text-gray-400">
+                                <a href="#">Home</a>
+                                <a href="#">Technologies</a>
+                                <a href="#">Projects</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <h4 className="text-xs font-bold text-gray-900 mb-4">LEGAL</h4>
-                        <div className="flex flex-col gap-3 text-sm text-gray-400">
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms of Service</a>
+                        <div>
+                            <h4 className="text-xs font-bold text-gray-900 mb-4">COMPANY</h4>
+                            <div className="flex flex-col gap-3 text-sm text-gray-400">
+                                <a href="#">About</a>
+                                <a href="#">Contact</a>
+                                <a href="#">Careers</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-xs font-bold text-gray-900 mb-4">LEGAL</h4>
+                            <div className="flex flex-col gap-3 text-sm text-gray-400">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Service</a>
+                            </div>
                         </div>
                     </div>
 
